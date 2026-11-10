@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplos ilustrativos — Demonstração Unidade Pastoral</title>
+<style>
+  :root{
+    --fundo:#FAF7F3; --texto:#26221F; --texto-suave:#585254;
+    --laranja:#E8601A;   /* Nova Oeiras */
+    --azul:#2E5DBE;      /* São Julião da Barra */
+    --rosa:#D3246C;
+    --cartao:#FFFFFF; --linha:#eae9ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--fundo);color:var(--texto);line-height:1.55}
+  .envoltorio{max-width:880px;margin:0 auto;padding:0 20px}
+  a{color:var(--azul);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Faixa de demonstração */
+  .faixa-demo{background:var(--texto);color:#fff;font-size:.82rem;text-align:center;padding:8px 14px}
+  .faixa-demo a{color:#ffd9a8}
+
+  /* Cabeçalho */
+  header.cabecalho{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+                   gap:12px;padding:18px 0}
+  .marca{font-weight:800;font-size:1.05rem;line-height:1.2}
+  .marca small{display:block;font-weight:500;color:var(--texto-suave);font-size:.78rem}
+  nav.menu-principal{display:flex;flex-wrap:wrap;gap:16px;font-size:.92rem;font-weight:600}
+  nav.menu-principal a{color:var(--texto)}
+  nav.menu-principal a:hover{color:var(--laranja);text-decoration:none}
+
+  /* Herói */
+  .heroi{border-radius:18px;padding:56px 32px;margin:8px 0 40px;
+         background:
+           radial-gradient(ellipse 45% 60% at 18% 30%, rgba(232,96,26,.20), transparent 70%),
+           radial-gradient(ellipse 50% 65% at 60% 20%, rgba(58,155,216,.20), transparent 70%),
+           radial-gradient(ellipse 40% 55% at 88% 60%, rgba(211,36,108,.14), transparent 70%),
+           #fdfbf8;}
+  .heroi .etiqueta{letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--laranja);text-transform:uppercase}
+  .heroi h1{font-size:2.5rem;line-height:1.12;margin:10px 0 14px;max-width:16ch}
+  .heroi p{color:var(--texto-suave);max-width:46ch;font-size:1.05rem}
+  .botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .botao{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:.95rem}
+  .botao.primario{background:var(--texto);color:#fff}
+  .botao.secundario{background:#fff;color:var(--texto);border:1px solid var(--linha)}
+  .botao:hover{text-decoration:none;opacity:.92}
+
+  /* Secções */
+  section{margin:44px 0}
+  .seccao-topo{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
+  h2{font-size:1.5rem}
+  .seccao-topo a{font-size:.88rem;font-weight:600}
+
+  /* Cartões de horário */
+  .grelha{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:640px){.grelha{grid-template-columns:1fr}.heroi h1{font-size:1.9rem}}
+  .cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:20px}
+  .cartao h3{font-size:1rem;display:flex;align-items:center;gap:8px}
+  .ponto{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .ponto.no{background:var(--laranja)} .ponto.sj{background:var(--azul)}
+  .horas-grandes{font-size:1.35rem;font-weight:800;margin:8px 0 4px;letter-spacing:.01em}
+  .nota-pequena{color:var(--texto-suave);font-size:.84rem}
+
+  table.horarios{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--linha)}
+  table.horarios th, table.horarios td{padding:10px 14px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--linha)}
+  table.horarios th{background:#f3efe9;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--texto-suave)}
+  table.horarios tr:last-child td{border-bottom:none}
+
+  /* Boletim */
+  .boletim{background:var(--texto);color:#fff;border-radius:14px;padding:24px;
+           display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+  .boletim strong{font-size:1.1rem}
+  .boletim p{color:#cfc9c6;font-size:.88rem;margin-top:4px}
+  .boletim .botao{background:#fff;color:var(--texto)}
+
+  /* Agenda / notícias */
+  .evento{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--linha);
+          border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .evento .data{min-width:52px;text-align:center;background:var(--fundo);border-radius:10px;padding:8px 4px}
+  .evento .data b{display:block;font-size:1.2rem}
+  .evento .data span{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--texto-suave)}
+  .evento h3{font-size:1rem}
+  .evento p{color:var(--texto-suave);font-size:.86rem;margin-top:2px}
+
+  /* Alpha */
+  .alpha{background:linear-gradient(120deg,#fdf3ec,#eef4fd);border-radius:14px;padding:32px}
+  .alpha .etiqueta{letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--rosa);text-transform:uppercase}
+  .alpha blockquote{margin:14px 0;padding-left:14px;border-left:3px solid var(--rosa);font-style:italic;color:var(--texto-suave)}
+
+  /* Contactos */
+  .contactos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:640px){.contactos-grid{grid-template-columns:1fr}}
+  .contactos-grid .cartao p{font-size:.9rem;margin:6px 0}
+  .contactos-grid .cartao .rotulo{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--texto-suave);font-weight:700}
+
+  footer{border-top:1px solid var(--linha);margin-top:48px;padding:24px 0 40px;color:var(--texto-suave);font-size:.84rem}
+
+  .selo{display:inline-block;background:var(--rosa);color:#fff;font-size:.68rem;font-weight:800;
+        letter-spacing:.1em;text-transform:uppercase;border-radius:6px;padding:3px 8px;margin-bottom:10px}
+  .mock-chat .msg{border-radius:12px;padding:12px 16px;margin:8px 0;max-width:85%;font-size:.92rem}
+  .mock-chat .pergunta{background:#eef4fd;margin-left:auto}
+  .mock-chat .resposta{background:#fff;border:1px solid var(--linha)}
+  .equipa-linha{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--linha);font-size:.92rem}
+  .equipa-linha:last-child{border-bottom:none}
+  .equipa-linha .estado{color:var(--texto-suave);font-size:.8rem;white-space:nowrap}
+  .aviso-exemplo{background:#fdf3ec;border:1px solid #f3ddc9;border-radius:12px;padding:14px 18px;font-size:.86rem;color:var(--texto-suave);margin:16px 0}
+</style>
+</head>
+<body>
+
+<div class="faixa-demo">
+  Exemplos <strong>ilustrativos</strong> — não estão ligados a dados reais nem enviam informação.
+  O site oficial continua em <a href="https://www.unidadepastoral.com">unidadepastoral.com</a>
+</div>
+
+<div class="envoltorio">
+
+  <header class="cabecalho">
+    <div class="marca">
+      Unidade Pastoral
+      <small>Nova Oeiras · São Julião da Barra</small>
+    </div>
+    <nav class="menu-principal">
+      <a href="index.html">← Voltar à demonstração</a>
+    </nav>
+  </header>
+
+  <h1 style="font-size:1.8rem;margin:8px 0 6px">Ideias para experimentar</h1>
+  <p style="color:var(--texto-suave);max-width:60ch">Três exemplos do que este espaço pode vir a fazer.
+  Servem para ver e imaginar — nada aqui está ligado, recolhe dados ou substitui o que existe.</p>
+
+  <!-- ============ EXEMPLO 1: BOLETIM ============ -->
+  <section id="boletim">
+    <span class="selo">Exemplo ilustrativo</span>
+    <h2>1. O boletim da semana, mais rápido</h2>
+    <p class="nota-pequena" style="margin:6px 0 14px">A ideia: a partir da agenda e dos avisos da semana,
+    um rascunho do boletim é preparado com ajuda de IA e chega pronto a rever.
+    Quem decide é sempre a equipa pastoral — nada sai sem revisão.</p>
+
+    <div class="cartao">
+      <h3>Boletim UP · Semana de exemplo</h3>
+      <p class="nota-pequena" style="margin:8px 0"><strong>Domingo:</strong> Missas 9:00 (NO), 10:30 (SJ), 12:00 (NO e SJ), 18:00 (SJ), 19:00 (NO).</p>
+      <p class="nota-pequena" style="margin:8px 0"><strong>1.º Sábado do mês:</strong> Devoção Reparadora, 17:00 (SJ).</p>
+      <p class="nota-pequena" style="margin:8px 0"><strong>Jovens 18–30:</strong> inscrições abertas para o Alpha UP.</p>
+      <p class="nota-pequena" style="margin:8px 0;color:var(--rosa)"><strong>A CONFIRMAR:</strong> intenções da semana e aviso do cartório — aqui entraria o texto definitivo, revisto pela equipa.</p>
+    </div>
+    <div class="aviso-exemplo">Na prática: o rascunho chegaria pronto a quem faz o boletim hoje,
+    poupando a montagem semanal. O tempo que hoje é gasto a montar ficava para rever e melhorar.</div>
+  </section>
+
+  <!-- ============ EXEMPLO 2: ASSISTENTE ============ -->
+  <section id="assistente">
+    <span class="selo">Exemplo ilustrativo</span>
+    <h2>2. Perguntas e respostas com IA</h2>
+    <p class="nota-pequena" style="margin:6px 0 14px">A ideia: responder a perguntas simples dos paroquianos
+    com base no conteúdo do site — horários, contactos, sacramentos.</p>
+
+    <div class="cartao mock-chat">
+      <div class="msg pergunta">A que horas é a missa de domingo em São Julião da Barra?</div>
+      <div class="msg resposta">Ao domingo há missa em São Julião da Barra às 10:30, às 12:00 e às 18:00. Em Nova Oeiras há às 9:00, 12:00 e 19:00.</div>
+      <div class="msg pergunta">Como marco um batizado?</div>
+      <div class="msg resposta">Os batizados tratam-se no cartório: Nova Oeiras (214 431 876) de segunda a sexta, ou São Julião (214 423 266) à terça e quinta das 17:00 às 19:00.</div>
+    </div>
+    <div class="aviso-exemplo">Um assistente real exigiria regras claras de privacidade e revisão humana
+    para temas sensíveis. Nesta fase é apenas uma possibilidade para avaliar.</div>
+  </section>
+
+  <!-- ============ EXEMPLO 3: EQUIPAS ============ -->
+  <section id="equipas">
+    <span class="selo">Exemplo ilustrativo</span>
+    <h2>3. Gestão das equipas da paróquia</h2>
+    <p class="nota-pequena" style="margin:6px 0 14px">A ideia: um quadro simples e reservado com os grupos,
+    quem coordena cada um e o que está combinado — sem folhas de papel nem mensagens perdidas.</p>
+
+    <div class="cartao">
+      <div class="equipa-linha"><span>Catequese da infância</span><span class="estado">coordenação por definir</span></div>
+      <div class="equipa-linha"><span>Liturgia e coros</span><span class="estado">coordenação por definir</span></div>
+      <div class="equipa-linha"><span>Cáritas e GAF</span><span class="estado">coordenação por definir</span></div>
+      <div class="equipa-linha"><span>Jovens e Alpha</span><span class="estado">coordenação por definir</span></div>
+      <div class="equipa-linha"><span>Comunicação e boletim</span><span class="estado">coordenação por definir</span></div>
+    </div>
+    <div class="aviso-exemplo">Um espaço destes teria acesso reservado (só a equipa pastoral e os
+    coordenadores) e não ficaria num repositório público como esta demonstração.</div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">← Voltar à demonstração principal</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
