@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  SITE DE DEMONSTRAÇÃO — Unidade Pastoral de Nova Oeiras e São Julião da Barra
+  NÃO é o site oficial. O site oficial continua em https://www.unidadepastoral.com
+
+  COMO EDITAR ESTE FICHEIRO (sem saber programar):
+  - Os blocos que pode alterar estão marcados com  ✏️ EDITÁVEL
+  - Cada bloco diz o que pode mudar e onde.
+  - Depois de guardar ("commit") no GitHub, o site actualiza sozinho em 1-2 minutos.
+  - Guia completo: ver CONTEXTO-PARA-IA.md
+============================================================ -->
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidade Pastoral de Nova Oeiras e São Julião da Barra — Demonstração</title>
+<meta name="description" content="Site de demonstração da Unidade Pastoral de Nova Oeiras e São Julião da Barra. O site oficial é unidadepastoral.com.">
+<style>
+  :root{
+    --fundo:#FAF7F3; --texto:#26221F; --texto-suave:#585254;
+    --laranja:#E8601A;   /* Nova Oeiras */
+    --azul:#2E5DBE;      /* São Julião da Barra */
+    --rosa:#D3246C;
+    --cartao:#FFFFFF; --linha:#eae9ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--fundo);color:var(--texto);line-height:1.55}
+  .envoltorio{max-width:880px;margin:0 auto;padding:0 20px}
+  a{color:var(--azul);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Faixa de demonstração */
+  .faixa-demo{background:var(--texto);color:#fff;font-size:.82rem;text-align:center;padding:8px 14px}
+  .faixa-demo a{color:#ffd9a8}
+
+  /* Cabeçalho */
+  header.cabecalho{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+                   gap:12px;padding:18px 0}
+  .marca{font-weight:800;font-size:1.05rem;line-height:1.2}
+  .marca small{display:block;font-weight:500;color:var(--texto-suave);font-size:.78rem}
+  nav.menu-principal{display:flex;flex-wrap:wrap;gap:16px;font-size:.92rem;font-weight:600}
+  nav.menu-principal a{color:var(--texto)}
+  nav.menu-principal a:hover{color:var(--laranja);text-decoration:none}
+
+  /* Herói */
+  .heroi{border-radius:18px;padding:56px 32px;margin:8px 0 40px;
+         background:
+           radial-gradient(ellipse 45% 60% at 18% 30%, rgba(232,96,26,.20), transparent 70%),
+           radial-gradient(ellipse 50% 65% at 60% 20%, rgba(58,155,216,.20), transparent 70%),
+           radial-gradient(ellipse 40% 55% at 88% 60%, rgba(211,36,108,.14), transparent 70%),
+           #fdfbf8;}
+  .heroi .etiqueta{letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--laranja);text-transform:uppercase}
+  .heroi h1{font-size:2.5rem;line-height:1.12;margin:10px 0 14px;max-width:16ch}
+  .heroi p{color:var(--texto-suave);max-width:46ch;font-size:1.05rem}
+  .botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .botao{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:.95rem}
+  .botao.primario{background:var(--texto);color:#fff}
+  .botao.secundario{background:#fff;color:var(--texto);border:1px solid var(--linha)}
+  .botao:hover{text-decoration:none;opacity:.92}
+
+  /* Secções */
+  section{margin:44px 0}
+  .seccao-topo{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
+  h2{font-size:1.5rem}
+  .seccao-topo a{font-size:.88rem;font-weight:600}
+
+  /* Cartões de horário */
+  .grelha{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:640px){.grelha{grid-template-columns:1fr}.heroi h1{font-size:1.9rem}}
+  .cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:20px}
+  .cartao h3{font-size:1rem;display:flex;align-items:center;gap:8px}
+  .ponto{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .ponto.no{background:var(--laranja)} .ponto.sj{background:var(--azul)}
+  .horas-grandes{font-size:1.35rem;font-weight:800;margin:8px 0 4px;letter-spacing:.01em}
+  .nota-pequena{color:var(--texto-suave);font-size:.84rem}
+
+  table.horarios{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--linha)}
+  table.horarios th, table.horarios td{padding:10px 14px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--linha)}
+  table.horarios th{background:#f3efe9;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--texto-suave)}
+  table.horarios tr:last-child td{border-bottom:none}
+
+  /* Boletim */
+  .boletim{background:var(--texto);color:#fff;border-radius:14px;padding:24px;
+           display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+  .boletim strong{font-size:1.1rem}
+  .boletim p{color:#cfc9c6;font-size:.88rem;margin-top:4px}
+  .boletim .botao{background:#fff;color:var(--texto)}
+
+  /* Agenda / notícias */
+  .evento{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--linha);
+          border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .evento .data{min-width:52px;text-align:center;background:var(--fundo);border-radius:10px;padding:8px 4px}
+  .evento .data b{display:block;font-size:1.2rem}
+  .evento .data span{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--texto-suave)}
+  .evento h3{font-size:1rem}
+  .evento p{color:var(--texto-suave);font-size:.86rem;margin-top:2px}
+
+  /* Alpha */
+  .alpha{background:linear-gradient(120deg,#fdf3ec,#eef4fd);border-radius:14px;padding:32px}
+  .alpha .etiqueta{letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--rosa);text-transform:uppercase}
+  .alpha blockquote{margin:14px 0;padding-left:14px;border-left:3px solid var(--rosa);font-style:italic;color:var(--texto-suave)}
+
+  /* Contactos */
+  .contactos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:640px){.contactos-grid{grid-template-columns:1fr}}
+  .contactos-grid .cartao p{font-size:.9rem;margin:6px 0}
+  .contactos-grid .cartao .rotulo{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--texto-suave);font-weight:700}
+
+  footer{border-top:1px solid var(--linha);margin-top:48px;padding:24px 0 40px;color:var(--texto-suave);font-size:.84rem}
+</style>
+</head>
+<body>
+
+<div class="faixa-demo">
+  Isto é uma <strong>demonstração</strong> em preparação — o site oficial continua em
+  <a href="https://www.unidadepastoral.com">unidadepastoral.com</a>
+</div>
+
+<div class="envoltorio">
+
+  <header class="cabecalho">
+    <!-- ✏️ EDITÁVEL: nome e legenda da Unidade Pastoral -->
+    <div class="marca">
+      Unidade Pastoral
+      <small>Nova Oeiras · São Julião da Barra</small>
+    </div>
+    <nav class="menu-principal">
+      <a href="#horarios">Horários</a>
+      <a href="#boletim">Boletim</a>
+      <a href="#acontecer">A acontecer</a>
+      <a href="#contactos">Contactos</a>
+    </nav>
+  </header>
+
+  <!-- ✏️ EDITÁVEL: frase de boas-vindas e texto de apresentação -->
+  <div class="heroi">
+    <div class="etiqueta">Vinde e Vede · Ano Pastoral 2026–2027</div>
+    <h1>Há um lugar para ti. Vem como és.</h1>
+    <p>Duas paróquias, uma só família. Celebra connosco em Nova Oeiras ou em São Julião da Barra.</p>
+    <div class="botoes">
+      <a class="botao primario" href="#horarios">Horários de Missa</a>
+      <a class="botao secundario" href="#contactos">Sou novo(a) aqui</a>
+    </div>
+  </div>
+
+  <!-- ================= HORÁRIOS ================= -->
+  <section id="horarios">
+    <div class="seccao-topo">
+      <h2>Horários</h2>
+      <a href="https://www.unidadepastoral.com/horarios-e-servicos/">Ver no site actual →</a>
+    </div>
+
+    <!-- ✏️ EDITÁVEL: missas de domingo. (NO) = Nova Oeiras · (SJ) = São Julião da Barra -->
+    <div class="grelha">
+      <div class="cartao">
+        <h3><span class="ponto no"></span>Nova Oeiras — Domingo</h3>
+        <div class="horas-grandes">09:00 · 12:00 · 19:00</div>
+        <div class="nota-pequena">Igreja Paroquial de Nova Oeiras</div>
+      </div>
+      <div class="cartao">
+        <h3><span class="ponto sj"></span>São Julião da Barra — Domingo</h3>
+        <div class="horas-grandes">10:30 · 12:00 · 18:00</div>
+        <div class="nota-pequena">Igreja Paroquial de São Julião da Barra</div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- ✏️ EDITÁVEL: missas durante a semana -->
+    <table class="horarios">
+      <tr><th>Dia</th><th>Missa</th></tr>
+      <tr><td>Segunda-feira</td><td>19:00 (NO)</td></tr>
+      <tr><td>Terça-feira</td><td>19:00 (SJ)</td></tr>
+      <tr><td>Quarta-feira</td><td>19:00 (NO)</td></tr>
+      <tr><td>Quinta-feira</td><td>19:00 (SJ)</td></tr>
+      <tr><td>Sexta-feira</td><td>19:00 (NO)</td></tr>
+      <tr><td>Sábado</td><td>18:00 (SJ) · 19:00 (NO) · 21:30 (NO — Cam. Neoc.)</td></tr>
+    </table>
+
+    <br>
+
+    <!-- ✏️ EDITÁVEL: adoração e confissões -->
+    <div class="grelha">
+      <div class="cartao">
+        <h3>Adoração</h3>
+        <p class="nota-pequena">Seg 11:00–13:00 (NO) · Qui 11:00–18:00 (NO)<br>
+        Qui 17:00–19:00 (SJ) · 1.º Sábado 17:00–18:00 (SJ)</p>
+      </div>
+      <div class="cartao">
+        <h3>Confissões</h3>
+        <p class="nota-pequena">Ter 19:30 (SJ) · Qua 18:00 (NO) · Qui 18:00 (SJ)<br>
+        Sex 18:00 (NO) · 1.º Sábado 17:00 (SJ)</p>
+      </div>
+    </div>
+
+    <p class="nota-pequena" style="margin-top:12px">
+      Missa em direto: segunda a sábado às 19:00 e domingo às 12:00, no
+      <a href="https://www.facebook.com/UPastoral">Facebook</a> e no
+      <a href="https://www.youtube.com/UnidadePastoral/">YouTube</a> da Unidade Pastoral.
+    </p>
+  </section>
+
+  <!-- ================= BOLETIM ================= -->
+  <!-- ✏️ EDITÁVEL: número da edição e ligação do PDF, todas as semanas -->
+  <section id="boletim">
+    <div class="boletim">
+      <div>
+        <strong>Boletim desta semana — Edição 518</strong>
+        <p>Avisos, horários e intenções em PDF.</p>
+      </div>
+      <a class="botao" href="http://www.unidadepastoral.com/wp-content/uploads/2026/11/UP-Boletim-518_compressed-1.pdf">Descarregar PDF</a>
+    </div>
+  </section>
+
+  <!-- ================= A ACONTECER ================= -->
+  <!-- ✏️ EDITÁVEL: eventos e notícias. Sugestão: manter só 2 ou 3 e retirar os que já passaram. -->
+  <section id="acontecer">
+    <div class="seccao-topo">
+      <h2>A acontecer</h2>
+      <a href="https://www.unidadepastoral.com/categoria/noticias/">Todas as notícias →</a>
+    </div>
+
+    <div class="evento">
+      <div class="data"><b>1.º</b><span>Sáb</span></div>
+      <div>
+        <h3><a href="https://www.unidadepastoral.com/devocao-reparadora-dos-primeiros-sabados/">Devoção Reparadora dos Primeiros Sábados</a></h3>
+        <p>Todos os primeiros sábados do mês.</p>
+      </div>
+    </div>
+
+    <div class="evento">
+      <div class="data"><b>18–30</b><span>Anos</span></div>
+      <div>
+        <h3><a href="https://www.unidadepastoral.com/inscricoes-abertas-para-o-alpha-up-18-30/">Inscrições abertas — Alpha UP 18-30</a></h3>
+        <p>Para jovens adultos que querem explorar a fé num ambiente descontraído.</p>
+      </div>
+    </div>
+
+    <div class="evento">
+      <div class="data"><b>✈</b><span>2026</span></div>
+      <div>
+        <h3><a href="https://www.unidadepastoral.com/viagem-ao-egito/">Viagem ao Egito</a></h3>
+        <p>Peregrinação da Unidade Pastoral — informações e inscrições.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ALPHA ================= -->
+  <!-- ✏️ EDITÁVEL: texto e ligações do Alpha -->
+  <section>
+    <div class="alpha">
+      <div class="etiqueta">Vinde e Vede · Ano Pastoral 2026–2027</div>
+      <h2 style="margin-top:8px">Experimenta o Alpha</h2>
+      <p style="margin-top:8px;max-width:52ch">Fé. Vida. Perguntas. Um lugar descontraído para explorar a fé cristã, sem pressão e sem julgamentos.</p>
+      <blockquote>«Vinde e vede.» (Jo 1, 39)</blockquote>
+      <div class="botoes">
+        <a class="botao primario" href="https://www.unidadepastoral.com/alpha/">Quero experimentar</a>
+        <a class="botao secundario" href="https://www.unidadepastoral.com/alpha/">Tenho perguntas sobre a fé</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTOS ================= -->
+  <!-- ✏️ EDITÁVEL: horários do cartório, e-mails e telefones -->
+  <section id="contactos">
+    <div class="seccao-topo">
+      <h2>Contactos e Cartório</h2>
+    </div>
+    <div class="contactos-grid">
+      <div class="cartao">
+        <h3><span class="ponto no"></span>Nova Oeiras</h3>
+        <p class="rotulo">Cartório</p>
+        <p>Segunda a sexta 10:00–13:30 e 14:30–19:00<br>Sábado 11:00–12:30 (atendimento para as duas paróquias)</p>
+        <p class="rotulo">E-mail e telefones</p>
+        <p><a href="mailto:novaoeiras@unidadepastoral.com">novaoeiras@unidadepastoral.com</a><br>
+        <a href="tel:+351214431876">214 431 876</a> · <a href="tel:+351919728981">919 728 981</a></p>
+      </div>
+      <div class="cartao">
+        <h3><span class="ponto sj"></span>São Julião da Barra</h3>
+        <p class="rotulo">Cartório</p>
+        <p>Terça e quinta 17:00–19:00</p>
+        <p class="rotulo">E-mail e telefones</p>
+        <p><a href="mailto:saojuliaodabarra@unidadepastoral.com">saojuliaodabarra@unidadepastoral.com</a><br>
+        <a href="tel:+351214423266">214 423 266</a> · <a href="tel:+351917873754">917 873 754</a></p>
+      </div>
+    </div>
+    <div class="cartao" style="margin-top:16px">
+      <h3>Atendimento do pároco</h3>
+      <p class="nota-pequena">Para marcar, envie mensagem por WhatsApp ou SMS para
+      <a href="tel:+351934194110">934 194 110</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <!-- ✏️ EDITÁVEL: nota de rodapé -->
+    <p><strong>Unidade Pastoral de Nova Oeiras e São Julião da Barra</strong> · Pároco: Pe. Nuno Westwood · Diácono: Vítor Lourenço</p>
+    <p style="margin-top:6px">
+      <a href="https://www.facebook.com/UPastoral">Facebook</a> ·
+      <a href="https://www.instagram.com/novaoeiras_saojuliao/">Instagram</a> ·
+      <a href="https://www.youtube.com/UnidadePastoral/">YouTube</a>
+    </p>
+    <p style="margin-top:12px">Demonstração preparada com conteúdo público de
+      <a href="https://www.unidadepastoral.com">unidadepastoral.com</a>, para avaliação pela equipa pastoral.
+      Sem ligação ao domínio, ao alojamento ou aos e-mails actuais.</p>
+  </footer>
+
+</div>
+</body>
+</html>
