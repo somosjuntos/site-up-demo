@@ -1,7 +1,10 @@
 # Contexto para a sua IA (ChatGPT, Gemini, etc.)
 
-> **Como usar:** copie TODO o conteúdo deste ficheiro e cole-o na conversa com a sua IA.
-> A partir daí pode dizer-lhe, em linguagem normal, o que quer ver, mudar ou experimentar.
+> **Em 3 passos:**
+> 1. Copie TODO este ficheiro e cole-o na conversa com a sua IA.
+> 2. Diga-lhe em linguagem normal o que quer ver ou mudar na demonstração.
+> 3. Envie o resultado a quem lhe mostrou esta página. Essa pessoa aplica a
+>    alteração — a IA nunca publica sozinha.
 
 ---
 
