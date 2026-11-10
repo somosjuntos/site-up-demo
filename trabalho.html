@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  PÁGINA DE TRABALHO — projecto do site da Unidade Pastoral
+  A nossa oficina: aqui penduramos ideias, desenvolvemo-las e
+  registamos o feedback. O Pe. Nuno só é chamado quando algo está
+  pronto para ver ou experimentar — com o link directo e uma
+  pergunta simples. Não recebe aviso a cada pequena alteração.
+
+  COMO FUNCIONA:
+  - Cada ideia tem um estado: em preparação, pronta a experimentar,
+    com feedback, aprovada.
+  - Esta página NÃO recolhe respostas: não tem formulário e nada do
+    que aqui se lê é enviado para lado nenhum.
+  - O feedback chega por mensagem normal e fica registado junto da
+    ideia, orientando a revisão seguinte.
+============================================================ -->
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espaço de trabalho — Site da Unidade Pastoral</title>
+<meta name="description" content="Página de trabalho do projecto do site da Unidade Pastoral de Nova Oeiras e São Julião da Barra.">
+<style>
+  :root{
+    --fundo:#F4F0E6; --texto:#22284A; --texto-suave:#5A5E7A;
+    --magenta:#C2255C; --cartao:#FFFFFF; --linha:#E6E1D2;
+    --amarelo:#B45309; --verde:#2F7D4F; --azul:#2E5DBE; --cinza:#6B7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--fundo);color:var(--texto);line-height:1.55}
+  .envoltorio{max-width:880px;margin:0 auto;padding:0 20px}
+  a{color:var(--magenta);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .faixa-demo{background:var(--texto);color:#fff;font-size:.82rem;text-align:center;padding:8px 14px}
+  .faixa-demo a{color:#ffd9a8}
+
+  header.cabecalho{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+                   gap:12px;padding:18px 0}
+  .marca{font-weight:800;font-size:1rem;line-height:1.2;text-transform:uppercase;letter-spacing:.04em}
+  .marca small{display:block;font-weight:500;color:var(--texto-suave);font-size:.74rem;letter-spacing:.1em;text-transform:none}
+  nav.menu-principal{display:flex;flex-wrap:wrap;gap:16px;font-size:.86rem;font-weight:700}
+  nav.menu-principal a{color:var(--texto)}
+
+  h1{font-size:2rem;line-height:1.15;margin:10px 0 8px;font-weight:800}
+  .etiqueta{letter-spacing:.18em;font-size:.72rem;font-weight:800;color:var(--magenta);text-transform:uppercase}
+  .intro{color:var(--texto-suave);max-width:56ch;margin-bottom:8px}
+
+  section{margin:40px 0}
+  h2{font-size:1.35rem;margin-bottom:14px}
+
+  .cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:20px;margin-bottom:12px}
+  .cartao h3{font-size:1.02rem;margin-bottom:6px}
+  .cartao p{font-size:.92rem;color:var(--texto-suave)}
+  .nota-pequena{color:var(--texto-suave);font-size:.84rem}
+
+  .selo{display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+        border-radius:999px;padding:3px 12px;margin-bottom:8px}
+  .selo.preparacao{background:#F1F1F1;color:var(--cinza)}
+  .selo.pronto{background:#EAF5EE;color:var(--verde)}
+  .selo.feedback{background:#EEF2FB;color:var(--azul)}
+  .selo.aprovado{background:#F0EAF5;color:#7A3FA0}
+
+  .pergunta{border-left:4px solid var(--magenta)}
+  .pergunta h3{color:var(--magenta)}
+
+  .feedback-nota{margin-top:10px;background:#F7F9FD;border:1px dashed var(--azul);border-radius:10px;
+                 padding:10px 14px;font-size:.86rem;color:var(--texto-suave)}
+
+  .como-responder{background:var(--texto);color:#fff;border-radius:14px;padding:24px}
+  .como-responder strong{font-size:1.05rem}
+  .como-responder p{color:#C9CCDE;font-size:.9rem;margin-top:8px}
+
+  footer{border-top:1px solid var(--linha);margin-top:48px;padding:24px 0 40px;color:var(--texto-suave);font-size:.84rem}
+</style>
+</head>
+<body>
+
+<div class="faixa-demo">
+  Espaço de trabalho de um projecto em preparação — o site oficial continua em
+  <a href="https://www.unidadepastoral.com">unidadepastoral.com</a>
+</div>
+
+<div class="envoltorio">
+
+  <header class="cabecalho">
+    <div class="marca">
+      Site da Unidade Pastoral
+      <small>Espaço de trabalho</small>
+    </div>
+    <nav class="menu-principal">
+      <a href="index.html">Ver a demonstração do site →</a>
+    </nav>
+  </header>
+
+  <div class="etiqueta">A nossa oficina</div>
+  <h1>Ideias que estamos a trabalhar</h1>
+  <p class="intro">Esta página é a oficina do projecto: aqui penduramos ideias, desenvolvemo-las
+  e registamos o que cada pessoa disse. O Pe. Nuno só é chamado quando algo está pronto para ver
+  ou experimentar — com o link directo e uma pergunta simples. Nada muda no site oficial: qualquer
+  alteração aparece primeiro na demonstração e só passa ao site real depois de uma decisão expressa.</p>
+
+  <!-- ================= PRONTO PARA O PE. NUNO ================= -->
+  <!-- ✏️ EDITÁVEL: o que está pronto para ele ver agora. Manter pouco e concreto. -->
+  <section id="para-nuno">
+    <h2>Pronto para o Pe. Nuno experimentar</h2>
+    <div class="cartao pergunta">
+      <span class="selo pronto">Pronto a experimentar</span>
+      <h3>A demonstração do site</h3>
+      <p>A página inicial tal como um visitante a veria: horários das duas paróquias, agenda,
+      boletim, Alpha e contactos, seguindo a visão já publicada em
+      unidadepastoral.com/unidade-pastoral-renovada.</p>
+      <p style="margin-top:8px"><a href="index.html">Abrir a demonstração →</a></p>
+      <p style="margin-top:10px"><b>Pergunta simples:</b> o que gostava de ver diferente —
+      uma frase, uma cor, uma secção a mais ou a menos?</p>
+      <div class="feedback-nota">Feedback: ainda não recebido. Quando chegar, fica registado aqui,
+      junto da ideia, e orienta a revisão seguinte.</div>
+    </div>
+  </section>
+
+  <!-- ================= EM PREPARAÇÃO NA OFICINA ================= -->
+  <!-- ✏️ EDITÁVEL: ideias em desenvolvimento. Cada uma com selo de estado. -->
+  <section id="oficina">
+    <h2>Em preparação na oficina</h2>
+    <p class="nota-pequena" style="margin-bottom:14px">
+      Ideias para outras frentes que estamos a desenvolver. Só sobem para a secção anterior — e o Pe. Nuno só é chamado — quando estiverem prontas a experimentar.
+    </p>
+    <div class="cartao">
+      <span class="selo preparacao">Em preparação</span>
+      <h3>Boletim da semana, mais rápido</h3>
+      <p>Como poderia nascer o boletim a partir da agenda da semana, sempre revisto antes de sair.
+      <a href="exemplos.html#boletim">Ver exemplo ilustrativo →</a></p>
+    </div>
+    <div class="cartao">
+      <span class="selo preparacao">Em preparação</span>
+      <h3>Perguntas e respostas com IA</h3>
+      <p>Perguntar horários e informações da paróquia em linguagem normal.
+      <a href="exemplos.html#assistente">Ver exemplo ilustrativo →</a></p>
+    </div>
+    <div class="cartao">
+      <span class="selo preparacao">Em preparação</span>
+      <h3>Gestão das equipas</h3>
+      <p>Um quadro simples com os grupos e quem coordena cada um.
+      <a href="exemplos.html#equipas">Ver exemplo ilustrativo →</a></p>
+    </div>
+    <div class="cartao">
+      <span class="selo preparacao">Em preparação</span>
+      <h3>Cantinho das crianças</h3>
+      <p>Desenhos para colorir e um jogo simples ligados ao Evangelho do domingo.
+      <a href="exemplos.html#criancas">Ver exemplo ilustrativo →</a></p>
+    </div>
+  </section>
+
+  <!-- ================= COMO CHEGA O FEEDBACK ================= -->
+  <section id="como-funciona">
+    <h2>Como o feedback chega e vira acção</h2>
+    <div class="cartao">
+      <p style="color:var(--texto);font-size:.94rem">
+      1. Trabalhamos uma ideia na oficina até estar pronta.<br>
+      2. Avisamos o Pe. Nuno — só então — com o link directo e uma pergunta simples,
+      pelo canal e com a frequência que combinarmos com ele.<br>
+      3. Ele responde por mensagem normal, como numa conversa qualquer. Sem contas, sem código,
+      sem formulários.<br>
+      4. O feedback fica registado aqui, junto da ideia, e orienta a revisão seguinte.<br>
+      5. Quando uma ideia é aprovada, aí sim se fala em levá-la ao site oficial — decisão separada.</p>
+    </div>
+    <p class="nota-pequena">Estados possíveis de cada ideia: <b>em preparação</b> (na oficina),
+    <b>pronto a experimentar</b> (Pe. Nuno chamado), <b>com feedback</b> (resposta registada),
+    <b>aprovado</b> (confirmado; só então se avalia o site real).</p>
+    <p class="nota-pequena" style="margin-top:8px">Privacidade: as respostas nunca aparecem nesta
+    página nem em nenhuma página pública. Esta página não tem formulário e não recolhe dados.</p>
+  </section>
+
+  <!-- ================= GUIA PARA A IA ================= -->
+  <section id="guia-ia">
+    <h2>Se quiser usar a sua IA (ChatGPT, Gemini…)</h2>
+    <p class="nota-pequena">
+      Preparámos um guia de 3 passos para o assistente de IA que já usa: ele lê o contexto do
+      projecto e ajuda a escrever pedidos e ideias em linguagem normal. Não precisa de mexer
+      em código nem no GitHub.
+      <a href="https://github.com/somosjuntos/site-up-demo/blob/main/CONTEXTO-PARA-IA.md">Abrir o guia →</a>
+    </p>
+  </section>
+
+  <footer>
+    <p><strong>Projecto do site — Unidade Pastoral de Nova Oeiras e São Julião da Barra</strong></p>
+    <p style="margin-top:6px">Demonstração em
+    <a href="index.html">somosjuntos.github.io/site-up-demo</a> · Preparado para avaliação pela equipa pastoral,
+    sem ligação ao domínio, ao alojamento ou aos e-mails actuais.</p>
+  </footer>
+
+</div>
+</body>
+</html>
