@@ -3,6 +3,11 @@
   SITE DE DEMONSTRAÇÃO — Unidade Pastoral de Nova Oeiras e São Julião da Barra
   NÃO é o site oficial. O site oficial continua em https://www.unidadepastoral.com
 
+  ORIENTAÇÃO: a estrutura, o tom e o estilo desta página seguem a visão
+  publicada em https://www.unidadepastoral.com/unidade-pastoral-renovada/
+  (frases, secções e ordem retiradas dessa página; as cores e o arranjo
+  concreto são a nossa interpretação dessa orientação).
+
   COMO EDITAR ESTE FICHEIRO (sem saber programar):
   - Os blocos que pode alterar estão marcados com  ✏️ EDITÁVEL
   - Cada bloco diz o que pode mudar e onde.
@@ -17,17 +22,19 @@
 <meta name="description" content="Site de demonstração da Unidade Pastoral de Nova Oeiras e São Julião da Barra. O site oficial é unidadepastoral.com.">
 <style>
   :root{
-    --fundo:#FAF7F3; --texto:#26221F; --texto-suave:#585254;
-    --laranja:#E8601A;   /* Nova Oeiras */
-    --azul:#2E5DBE;      /* São Julião da Barra */
-    --rosa:#D3246C;
-    --cartao:#FFFFFF; --linha:#eae9ea;
+    --fundo:#F4F0E6;        /* creme quente, como na página "renovada" */
+    --texto:#22284A;        /* azul-escuro */
+    --texto-suave:#5A5E7A;
+    --magenta:#C2255C;      /* cor de destaque da página "renovada" */
+    --laranja:#E8601A;      /* Nova Oeiras */
+    --azul:#2E5DBE;         /* São Julião da Barra */
+    --cartao:#FFFFFF; --linha:#E6E1D2;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
        background:var(--fundo);color:var(--texto);line-height:1.55}
-  .envoltorio{max-width:880px;margin:0 auto;padding:0 20px}
-  a{color:var(--azul);text-decoration:none}
+  .envoltorio{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--magenta);text-decoration:none}
   a:hover{text-decoration:underline}
 
   /* Faixa de demonstração */
@@ -37,54 +44,59 @@
   /* Cabeçalho */
   header.cabecalho{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
                    gap:12px;padding:18px 0}
-  .marca{font-weight:800;font-size:1.05rem;line-height:1.2}
-  .marca small{display:block;font-weight:500;color:var(--texto-suave);font-size:.78rem}
-  nav.menu-principal{display:flex;flex-wrap:wrap;gap:16px;font-size:.92rem;font-weight:600}
+  .marca{font-weight:800;font-size:1.05rem;line-height:1.2;text-transform:uppercase;letter-spacing:.04em}
+  .marca small{display:block;font-weight:500;color:var(--texto-suave);font-size:.74rem;letter-spacing:.14em}
+  nav.menu-principal{display:flex;flex-wrap:wrap;gap:16px;font-size:.86rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
   nav.menu-principal a{color:var(--texto)}
-  nav.menu-principal a:hover{color:var(--laranja);text-decoration:none}
+  nav.menu-principal a:hover{color:var(--magenta);text-decoration:none}
 
-  /* Herói */
-  .heroi{border-radius:18px;padding:56px 32px;margin:8px 0 40px;
-         background:
-           radial-gradient(ellipse 45% 60% at 18% 30%, rgba(232,96,26,.20), transparent 70%),
-           radial-gradient(ellipse 50% 65% at 60% 20%, rgba(58,155,216,.20), transparent 70%),
-           radial-gradient(ellipse 40% 55% at 88% 60%, rgba(211,36,108,.14), transparent 70%),
-           #fdfbf8;}
-  .heroi .etiqueta{letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--laranja);text-transform:uppercase}
-  .heroi h1{font-size:2.5rem;line-height:1.12;margin:10px 0 14px;max-width:16ch}
-  .heroi p{color:var(--texto-suave);max-width:46ch;font-size:1.05rem}
-  .botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  /* Herói com aguarela */
+  .heroi{position:relative;border-radius:20px;padding:72px 36px;margin:8px 0 44px;overflow:hidden;
+         background:url('aquarela-hero.jpg') center/cover no-repeat, #fdfbf8;}
+  .heroi::before{content:"";position:absolute;inset:0;background:rgba(253,251,248,.55)}
+  .heroi > *{position:relative}
+  .etiqueta{letter-spacing:.18em;font-size:.72rem;font-weight:800;color:var(--magenta);text-transform:uppercase}
+  .heroi h1{font-size:3rem;line-height:1.08;margin:12px 0 16px;max-width:14ch;font-weight:800}
+  .heroi p{color:var(--texto);max-width:44ch;font-size:1.1rem}
+  .botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
   .botao{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:.95rem}
   .botao.primario{background:var(--texto);color:#fff}
   .botao.secundario{background:#fff;color:var(--texto);border:1px solid var(--linha)}
+  .botao.magenta{background:var(--magenta);color:#fff}
   .botao:hover{text-decoration:none;opacity:.92}
 
   /* Secções */
-  section{margin:44px 0}
+  section{margin:48px 0}
   .seccao-topo{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
-  h2{font-size:1.5rem}
+  h2{font-size:1.9rem;line-height:1.15;font-weight:800}
   .seccao-topo a{font-size:.88rem;font-weight:600}
+  .seccao-intro{color:var(--texto-suave);max-width:52ch;margin:10px 0 20px}
 
-  /* Cartões de horário */
+  /* Cartões */
   .grelha{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media (max-width:640px){.grelha{grid-template-columns:1fr}.heroi h1{font-size:1.9rem}}
-  .cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:20px}
-  .cartao h3{font-size:1rem;display:flex;align-items:center;gap:8px}
+  @media (max-width:640px){.grelha{grid-template-columns:1fr}.heroi h1{font-size:2.1rem}.heroi{padding:48px 24px}}
+  .cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:22px}
+  .cartao h3{font-size:1.05rem;display:flex;align-items:center;gap:8px}
   .ponto{width:10px;height:10px;border-radius:50%;display:inline-block}
   .ponto.no{background:var(--laranja)} .ponto.sj{background:var(--azul)}
-  .horas-grandes{font-size:1.35rem;font-weight:800;margin:8px 0 4px;letter-spacing:.01em}
+  .horas-grandes{font-size:1.4rem;font-weight:800;margin:8px 0 4px;letter-spacing:.01em}
   .nota-pequena{color:var(--texto-suave);font-size:.84rem}
+  .num{font-size:.78rem;font-weight:800;color:var(--magenta);letter-spacing:.1em}
+  .cartao-passo{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:22px;display:block;color:var(--texto)}
+  .cartao-passo:hover{text-decoration:none;border-color:var(--magenta)}
+  .cartao-passo h3{font-size:1.15rem;margin:10px 0 4px}
+  .cartao-passo p{color:var(--texto-suave);font-size:.88rem}
 
   table.horarios{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--linha)}
   table.horarios th, table.horarios td{padding:10px 14px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--linha)}
-  table.horarios th{background:#f3efe9;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--texto-suave)}
+  table.horarios th{background:#EFEAE0;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--texto-suave)}
   table.horarios tr:last-child td{border-bottom:none}
 
   /* Boletim */
   .boletim{background:var(--texto);color:#fff;border-radius:14px;padding:24px;
            display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
   .boletim strong{font-size:1.1rem}
-  .boletim p{color:#cfc9c6;font-size:.88rem;margin-top:4px}
+  .boletim p{color:#C9CCDE;font-size:.88rem;margin-top:4px}
   .boletim .botao{background:#fff;color:var(--texto)}
 
   /* Agenda / notícias */
@@ -94,12 +106,15 @@
   .evento .data b{display:block;font-size:1.2rem}
   .evento .data span{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--texto-suave)}
   .evento h3{font-size:1rem}
+  .evento h3 a{color:var(--texto)}
+  .evento h3 a:hover{color:var(--magenta)}
   .evento p{color:var(--texto-suave);font-size:.86rem;margin-top:2px}
 
   /* Alpha */
-  .alpha{background:linear-gradient(120deg,#fdf3ec,#eef4fd);border-radius:14px;padding:32px}
-  .alpha .etiqueta{letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--rosa);text-transform:uppercase}
-  .alpha blockquote{margin:14px 0;padding-left:14px;border-left:3px solid var(--rosa);font-style:italic;color:var(--texto-suave)}
+  .alpha{background:var(--cartao);border:1px solid var(--linha);border-radius:20px;padding:40px 36px}
+  .alpha h2{margin:10px 0 8px}
+  .alpha p{max-width:52ch}
+  .alpha blockquote{margin:16px 0;padding-left:14px;border-left:3px solid var(--magenta);font-style:italic;color:var(--texto-suave)}
 
   /* Contactos */
   .contactos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -123,51 +138,58 @@
     <!-- ✏️ EDITÁVEL: nome e legenda da Unidade Pastoral -->
     <div class="marca">
       Unidade Pastoral
-      <small>Nova Oeiras · São Julião da Barra</small>
+      <small>Nova Oeiras · São Julião</small>
     </div>
     <nav class="menu-principal">
       <a href="#horarios">Horários</a>
-      <a href="#boletim">Boletim</a>
       <a href="#acontecer">A acontecer</a>
+      <a href="#boletim">Boletim</a>
+      <a href="#alpha">Alpha</a>
       <a href="#contactos">Contactos</a>
     </nav>
   </header>
 
-  <!-- ✏️ EDITÁVEL: frase de boas-vindas e texto de apresentação -->
+  <!-- ✏️ EDITÁVEL: frase de boas-vindas. Tom e frases seguem a página "unidade-pastoral-renovada". -->
   <div class="heroi">
-    <div class="etiqueta">Vinde e Vede · Ano Pastoral 2026–2027</div>
-    <h1>Há um lugar para ti. Vem como és.</h1>
-    <p>Duas paróquias, uma só família. Celebra connosco em Nova Oeiras ou em São Julião da Barra.</p>
+    <div class="etiqueta">Uma igreja de portas abertas em Oeiras</div>
+    <h1>Há um lugar para ti.</h1>
+    <p>Vem como és. Descobre Jesus, encontra comunidade e recomeça.</p>
     <div class="botoes">
-      <a class="botao primario" href="#horarios">Horários de Missa</a>
-      <a class="botao secundario" href="#contactos">Sou novo(a) aqui</a>
+      <a class="botao magenta" href="#horarios">Quero participar</a>
+      <a class="botao secundario" href="#alpha">Tenho perguntas sobre a fé</a>
     </div>
   </div>
 
-  <!-- ================= HORÁRIOS ================= -->
+  <!-- ================= MISSAS DE DOMINGO ================= -->
   <section id="horarios">
-    <div class="seccao-topo">
-      <h2>Horários</h2>
+    <div class="etiqueta">Próximo domingo</div>
+    <div class="seccao-topo" style="margin-top:8px">
+      <h2>Encontra a Missa certa para ti</h2>
       <a href="https://www.unidadepastoral.com/horarios-e-servicos/">Ver no site actual →</a>
     </div>
+    <p class="seccao-intro">Duas paróquias, uma só família. Celebra connosco em Nova Oeiras ou em São Julião da Barra.
+    Não precisas de conhecer ninguém nem de saber tudo. Basta chegar.</p>
 
-    <!-- ✏️ EDITÁVEL: missas de domingo. (NO) = Nova Oeiras · (SJ) = São Julião da Barra -->
+    <!-- ✏️ EDITÁVEL: missas de domingo -->
     <div class="grelha">
       <div class="cartao">
-        <h3><span class="ponto no"></span>Nova Oeiras — Domingo</h3>
+        <div class="num">01</div>
+        <h3><span class="ponto no"></span>Nova Oeiras</h3>
         <div class="horas-grandes">09:00 · 12:00 · 19:00</div>
         <div class="nota-pequena">Igreja Paroquial de Nova Oeiras</div>
       </div>
       <div class="cartao">
-        <h3><span class="ponto sj"></span>São Julião da Barra — Domingo</h3>
+        <div class="num">02</div>
+        <h3><span class="ponto sj"></span>São Julião da Barra</h3>
         <div class="horas-grandes">10:30 · 12:00 · 18:00</div>
         <div class="nota-pequena">Igreja Paroquial de São Julião da Barra</div>
       </div>
     </div>
+    <p class="nota-pequena" style="margin-top:10px">Horários regulares. Em agosto e dias festivos podem existir alterações.</p>
 
     <br>
 
-    <!-- ✏️ EDITÁVEL: missas durante a semana -->
+    <!-- ✏️ EDITÁVEL: missas durante a semana. (NO) = Nova Oeiras · (SJ) = São Julião da Barra -->
     <table class="horarios">
       <tr><th>Dia</th><th>Missa</th></tr>
       <tr><td>Segunda-feira</td><td>19:00 (NO)</td></tr>
@@ -201,23 +223,41 @@
     </p>
   </section>
 
-  <!-- ================= BOLETIM ================= -->
-  <!-- ✏️ EDITÁVEL: número da edição e ligação do PDF, todas as semanas -->
-  <section id="boletim">
-    <div class="boletim">
-      <div>
-        <strong>Boletim desta semana — Edição 518</strong>
-        <p>Avisos, horários e intenções em PDF.</p>
-      </div>
-      <a class="botao" href="http://www.unidadepastoral.com/wp-content/uploads/2026/11/UP-Boletim-518_compressed-1.pdf">Descarregar PDF</a>
+  <!-- ================= PRÓXIMO PASSO ================= -->
+  <!-- ✏️ EDITÁVEL: os quatro caminhos. Secção e textos seguem a página "renovada". -->
+  <section id="passos">
+    <div class="etiqueta">Faz caminho connosco</div>
+    <h2 style="margin-top:8px">Qual é o teu próximo passo?</h2>
+    <div class="grelha" style="margin-top:20px">
+      <a class="cartao-passo" href="#contactos">
+        <div class="num">01</div>
+        <h3>Sou novo</h3>
+        <p>Começa por aqui</p>
+      </a>
+      <a class="cartao-passo" href="#contactos">
+        <div class="num">02</div>
+        <h3>Crianças e jovens</h3>
+        <p>Crescer na fé e na amizade</p>
+      </a>
+      <a class="cartao-passo" href="#contactos">
+        <div class="num">03</div>
+        <h3>Quero servir</h3>
+        <p>Descobre a tua missão</p>
+      </a>
+      <a class="cartao-passo" href="#contactos">
+        <div class="num">04</div>
+        <h3>Preciso de oração</h3>
+        <p>Estamos contigo</p>
+      </a>
     </div>
   </section>
 
   <!-- ================= A ACONTECER ================= -->
   <!-- ✏️ EDITÁVEL: eventos e notícias. Sugestão: manter só 2 ou 3 e retirar os que já passaram. -->
   <section id="acontecer">
-    <div class="seccao-topo">
-      <h2>A acontecer</h2>
+    <div class="etiqueta">A acontecer</div>
+    <div class="seccao-topo" style="margin-top:8px">
+      <h2>Encontra o teu lugar esta semana</h2>
       <a href="https://www.unidadepastoral.com/categoria/noticias/">Todas as notícias →</a>
     </div>
 
@@ -246,70 +286,38 @@
     </div>
   </section>
 
-  <!-- ================= ALPHA ================= -->
-  <!-- ✏️ EDITÁVEL: texto e ligações do Alpha -->
-  <section>
-    <div class="alpha">
-      <div class="etiqueta">Vinde e Vede · Ano Pastoral 2026–2027</div>
-      <h2 style="margin-top:8px">Experimenta o Alpha</h2>
-      <p style="margin-top:8px;max-width:52ch">Fé. Vida. Perguntas. Um lugar descontraído para explorar a fé cristã, sem pressão e sem julgamentos.</p>
-      <blockquote>«Vinde e vede.» (Jo 1, 39)</blockquote>
-      <div class="botoes">
-        <a class="botao primario" href="https://www.unidadepastoral.com/alpha/">Quero experimentar</a>
-        <a class="botao secundario" href="https://www.unidadepastoral.com/alpha/">Tenho perguntas sobre a fé</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= IDEIAS PARA EXPERIMENTAR ================= -->
-  <!-- ✏️ EDITÁVEL: cartões de ideias. Cada um liga a um exemplo ilustrativo. -->
-  <section id="ideias">
-    <div class="seccao-topo">
-      <h2>Ideias para experimentar</h2>
-      <a href="exemplos.html">Ver exemplos →</a>
-    </div>
-    <p class="nota-pequena" style="margin-bottom:14px">
-      Três possibilidades que este espaço pode vir a ter. Os exemplos são ilustrativos:
-      não estão ligados a dados reais e não enviam informação a ninguém.
-    </p>
-    <div class="grelha">
-      <div class="cartao">
-        <h3>Boletim da semana, mais rápido</h3>
-        <p class="nota-pequena">Como poderia nascer o boletim a partir da agenda da semana,
-        sempre revisto antes de sair. <a href="exemplos.html#boletim">Ver exemplo →</a></p>
-      </div>
-      <div class="cartao">
-        <h3>Perguntas e respostas com IA</h3>
-        <p class="nota-pequena">Perguntar horários e informações da paróquia em linguagem
-        normal. <a href="exemplos.html#assistente">Ver exemplo →</a></p>
-      </div>
-      <div class="cartao">
-        <h3>Gestão das equipas</h3>
-        <p class="nota-pequena">Um quadro simples com os grupos e quem coordena cada um.
-        <a href="exemplos.html#equipas">Ver exemplo →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PEDIR ALTERAÇÃO ================= -->
-  <!-- ✏️ EDITÁVEL: instruções para pedir mudanças -->
-  <section id="pedir">
+  <!-- ================= BOLETIM ================= -->
+  <!-- ✏️ EDITÁVEL: número da edição e ligação do PDF, todas as semanas -->
+  <section id="boletim">
     <div class="boletim">
       <div>
-        <strong>Quer mudar alguma coisa nesta demonstração?</strong>
-        <p>Envie o pedido, por escrito, a quem lhe mostrou esta página — basta dizer o que quer
-        diferente, como numa mensagem qualquer. Também pode usar o assistente de IA que já tem
-        (ChatGPT, Gemini…) com o guia que preparámos. Não precisa de instalar nada nem de mexer em código.</p>
+        <strong>Boletim desta semana — Edição 518</strong>
+        <p>Avisos, horários e intenções em PDF.</p>
       </div>
-      <a class="botao" href="https://github.com/somosjuntos/site-up-demo/blob/main/CONTEXTO-PARA-IA.md">Guia para a sua IA</a>
+      <a class="botao" href="http://www.unidadepastoral.com/wp-content/uploads/2026/11/UP-Boletim-518_compressed-1.pdf">Descarregar PDF</a>
+    </div>
+  </section>
+
+  <!-- ================= ALPHA ================= -->
+  <!-- ✏️ EDITÁVEL: texto e ligações do Alpha -->
+  <section id="alpha">
+    <div class="alpha">
+      <div class="etiqueta">Experimenta o Alpha</div>
+      <h2>Fé. Vida. Perguntas.</h2>
+      <p>Um lugar descontraído para explorar a fé cristã, partilhar o que pensas e ouvir outras
+      pessoas. Sem pressão. Sem julgamentos. Com boa conversa à mesa.</p>
+      <blockquote>«Vinde e vede.» (Jo 1, 39)</blockquote>
+      <div class="botoes">
+        <a class="botao magenta" href="https://www.unidadepastoral.com/alpha/">Quero experimentar</a>
+      </div>
     </div>
   </section>
 
   <!-- ================= CONTACTOS ================= -->
   <!-- ✏️ EDITÁVEL: horários do cartório, e-mails e telefones -->
   <section id="contactos">
-    <div class="seccao-topo">
+    <div class="etiqueta">Vem visitar-nos</div>
+    <div class="seccao-topo" style="margin-top:8px">
       <h2>Contactos e Cartório</h2>
     </div>
     <div class="contactos-grid">
