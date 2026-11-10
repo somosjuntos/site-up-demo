@@ -19,11 +19,27 @@ e nada neste projecto lhe mexe.
 - Site publicado (demonstração): https://somosjuntos.github.io/site-up-demo/
 - Tema do ano pastoral 2026–2027: **«Vinde e Vede»** (Jo 1, 39)
 - Língua: português de Portugal (pt-PT)
+- Espaço de trabalho do projecto: https://somosjuntos.github.io/site-up-demo/trabalho.html
+
+## Orientação de desenho
+
+A estrutura, o tom e o estilo da demonstração seguem a visão publicada pela
+Unidade Pastoral em https://www.unidadepastoral.com/unidade-pastoral-renovada/
+— frases como «Há um lugar para ti», «Vem como és» e «Qual é o teu próximo
+passo?» vêm dessa página. As cores e o arranjo concreto são a nossa interpretação
+dessa orientação: fundo creme, títulos em azul-escuro, destaques em magenta,
+secções numeradas. Qualquer alteração deve manter este tom acolhedor, em
+segunda pessoa do singular.
 
 ## Estrutura técnica (simples de propósito)
 
 - **Um só ficheiro de página:** `index.html` — HTML com CSS incluído, sem construção,
   sem dependências, sem JavaScript obrigatório.
+- **Página de trabalho:** `trabalho.html` — pergunta da semana, exemplos e estado
+  dos pedidos. Não recolhe respostas (sem formulário).
+- **Exemplos ilustrativos:** `exemplos.html` — ideias futuras (boletim, assistente,
+  equipas, cantinho das crianças), sempre marcadas como exemplo.
+- **Imagem do cabeçalho:** `aquarela-hero.jpg` (aguarela).
 - Os blocos de conteúdo editável estão marcados no código com comentários `✏️ EDITÁVEL`,
   cada um com instruções do que pode mudar.
 - Cores com significado: laranja `#E8601A` = paróquia de Nova Oeiras (NO);
